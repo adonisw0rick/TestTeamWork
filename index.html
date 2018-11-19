@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <script>
+        var company = "enlazando";
+        var key = "twp_S3wtv5tFnC8Tsh8LjZXWy0vJal5U";
+        var action = "projects.json";
+        // var http_request;
+        // http_request = new XMLHTTPRequest();
+        // http_request.onreadystatechange = function () { 
+        //     $.ajax({
+        //     url: 'https://' + company + '.teamwork.com/' + action,
+        //     headers: {"Authorization": "BASIC " + window.btoa(key + ":xxx")}
+        // })
+        //  };
+        // http_request.open("POST", 'https://' + company + '.teamwork.com/' + action);
+        // http_request.withCredentials = true;
+        // http_request.setRequestHeader("Content-Type", "application/json");
+        // http_request.send({ 'request': "authentication token" });
+        
+        $.ajax(
+            {
+	url: 'https://enlazando.teamwork.com/projects.json/',
+	headers: {"Authorization": "BASIC " + window.btoa(key + ":xxx")}
+},
+        {
+    success: function (response) { console.log('success'); },
+    error: function (request, errorType, errorMessage) {
+        alert(errorType + ' with ' + errorMessage);
+    },
+    timeout: 5000
+
+});
+
+        
+        
+
+        console.log(action)
+    </script>
+</body>
+</html>
